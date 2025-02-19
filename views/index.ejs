@@ -6,9 +6,11 @@
     <title>Mini Message Board</title>
   </head>
   <body>
+    <a href="/new">Post a message!</a>
     <div class="messages">
-      <% messages.forEach((message) => {%> <%- include("messages/message",
-      {message: message}) %> <% }); %>
+      <% messages.forEach((message) => {%> 
+        <%- include("messages/message", {message: message}) %> 
+      <% }); %>
     </div>
   </body>
 </html>
