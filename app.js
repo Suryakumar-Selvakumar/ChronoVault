@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("node:path");
-
 const app = express();
+
+// Routers
+const newRouter = require("./routes/newRouter");
 
 // setup path for static files
 const assetsPath = path.join(__dirname, "public");
@@ -28,7 +30,7 @@ app.get("/", (req, res) => {
   res.render("index", { messages: messages });
 });
 
-app.post("/new", (req, res) => {});
+app.use("/new", newRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {
