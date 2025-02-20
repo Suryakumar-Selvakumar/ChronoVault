@@ -2,6 +2,9 @@ const express = require("express");
 const path = require("node:path");
 const app = express();
 
+// utils
+const { getFormattedDate } = require("./utils/getFormattedDate");
+
 // data
 const messages = require("./db/messages");
 
@@ -21,7 +24,10 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index", { messages: messages });
+  res.render("index", {
+    messages: messages,
+    getFormattedDate: getFormattedDate,
+  });
 });
 
 app.use("/new", newRouter);

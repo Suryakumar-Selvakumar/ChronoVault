@@ -3,14 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Mini Message Board</title>
   </head>
   <body>
-    <a href="/new">Post a message!</a>
-    <div class="messages">
-      <% messages.forEach((message, index) => {%> <%-
-      include("messages/message", {message: message, index: index+1}) %> <% });
-      %>
+    <div class="container">
+      <h1>Mini Message Board</h1>
+      <a href="/new" id="post-new">Post a message!</a>
+      <p>Total posts: <%= messages.length %></p>
+      <p id="last-post">Last post by: <%= messages[messages.length-1].user %></p>
+      <video autoPlay loop muted playsInline>
+        <source src="black-hole.mp4" type="video/mp4" />
+      </video>
+      <div class="messages">
+        <% messages.forEach((message, index) => {%> <%-
+        include("messages/message", {message: message, index: index+1,
+        getFormattedDate: getFormattedDate}) %> <% }); %>
+      </div>
     </div>
   </body>
 </html>

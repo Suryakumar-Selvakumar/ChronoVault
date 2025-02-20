@@ -1,0 +1,193 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(2, 0, 19);
+  color: white;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(280px, 90vw, 1300px);
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding-top: 3rem;
+  gap: 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#post-new {
+  border: 1px solid white;
+  color: white;
+  background-color: rgba(2, 0, 19, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+#post-new:hover {
+  color: black;
+  background-color: white;
+  transition: all 0.4s ease;
+}
+
+#post-new:not(:hover) {
+  transition: all 0.4s ease;
+}
+
+#last-post {
+  margin-top: -1rem;
+}
+
+video {
+  margin: -150px 0px -378.5px;
+  aspect-ratio: 1.776 / 1;
+  width: 1300px;
+  object-fit: contain;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  z-index: -2;
+}
+
+.messages {
+  width: 100%;
+  height: 100%;
+  padding-top: 1.875rem;
+  border-radius: 20px;
+  background-color: rgba(2, 0, 19, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  gap: 1rem;
+  background-color: rgb(255, 255, 255, 0.025);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px white solid;
+  padding-bottom: 5px;
+}
+
+#message-body {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.message-open {
+  display: flex;
+  justify-content: end;
+  font-size: 1.25rem;
+}
+
+.message-open > a {
+  border: 1px solid white;
+  color: white;
+  background-color: rgba(2, 0, 19, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+}
+
+.message-open > a:hover {
+  color: black;
+  background-color: white;
+  transition: all 0.4s ease;
+}
+
+.message-open > a:not(:hover) {
+  transition: all 0.4s ease;
+}
