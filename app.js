@@ -7,6 +7,7 @@ const messages = require("./db/messages");
 
 // Routers
 const newRouter = require("./routes/newRouter");
+const messagesRouter = require("./routes/messagesRouter");
 
 // setup path for static files
 const assetsPath = path.join(__dirname, "public");
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/new", newRouter);
+app.use("/messages", messagesRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {

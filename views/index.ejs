@@ -8,9 +8,9 @@
   <body>
     <a href="/new">Post a message!</a>
     <div class="messages">
-      <% messages.forEach((message) => {%> 
-        <%- include("messages/message", {message: message}) %> 
-      <% }); %>
+      <% messages.forEach((message, index) => {%> <%-
+      include("messages/message", {message: message, index: index+1}) %> <% });
+      %>
     </div>
   </body>
 </html>
