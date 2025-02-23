@@ -1,10 +1,12 @@
 <div class="message">
   <div class="message-header">
-    <span><%= message.user %></span>
-    <span>Posted: <%= getFormattedDate(message.added) %></span>
+    <span class="message-user"><%= message.user %></span>
+    <span class="message-date"><%= getFormattedDate(message.added) %></span>
   </div>
-  <p id="message-body"><%= message.text %></p>
+  <p class="message-body"><%= message.text %></p>
   <div class="message-open">
-    <a href="/messages/<%= index %>">Open</a>
+    <a href="/messages/<%= index %>"
+      ><button class="btn btn-down btn-down--white">Open</button></a
+    >
   </div>
 </div>
