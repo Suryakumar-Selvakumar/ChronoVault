@@ -10,20 +10,23 @@
     <div class="container">
       <h1 id="title">ChronoVault</h1>
       <a href="/new">
-        <button class="button-49">Cast your message</button>
+        <button class="button-49">Cast new message</button>
       </a>
-      <p id="total-posts">Total posts: <%= messages.length %></p>
-      <p id="last-post">
-        Last post by: <%= messages[messages.length-1].user %>
-      </p>
       <video autoPlay loop muted playsInline>
         <source src="black-hole.mp4" type="video/mp4" />
       </video>
-      <div class="messages">
+      <div class="blur-background">
         <% messages.forEach((message, index) => {%> <%-
         include("messages/message", {message: message, index: index+1,
         getFormattedDate: getFormattedDate}) %> <% }); %>
       </div>
     </div>
+    <p id="total-posts">
+      Total posts: <span class="message-date"><%= messages.length %></span>
+    </p>
+    <p id="last-post">
+      Last post by:
+      <span class="message-user"><%= messages[messages.length-1].user %></span>
+    </p>
   </body>
 </html>

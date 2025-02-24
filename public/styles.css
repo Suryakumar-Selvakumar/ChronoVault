@@ -86,14 +86,14 @@ body {
   align-items: center;
   width: clamp(280px, 90vw, 1300px);
   color: rgb(255, 255, 255);
-  font-size: 1.5rem;
-  padding-top: 3rem;
+  font-size: 1.25rem;
   gap: 1rem;
+  padding: 3rem 0;
 }
 
 #title {
   margin-bottom: 1rem;
-  font-size: 6rem;
+  font-size: 5.5rem;
   background: linear-gradient(
     0deg,
     rgba(178, 142, 255, 0.3) 30%,
@@ -151,7 +151,7 @@ a {
     transparent 3%,
     #bababa 3%,
     #bababa 5%,
-    #4d0a70 5%
+    #4a0f6a 5%
   );
   clip-path: var(--slice-0);
 }
@@ -215,7 +215,7 @@ a {
 #total-posts {
   font-family: myFontBody;
   font-size: 1.25rem;
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   right: 10px;
 }
@@ -223,7 +223,7 @@ a {
 #last-post {
   font-size: 1.25rem;
   font-family: myFontBody;
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   left: 10px;
 }
@@ -238,7 +238,7 @@ video {
   z-index: -2;
 }
 
-.messages {
+.blur-background {
   width: 100%;
   height: 100%;
   padding-top: 1.875rem;
@@ -249,8 +249,8 @@ video {
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .message {
@@ -303,7 +303,7 @@ video {
 
 .message-date {
   font-family: myFontDate;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1;
   padding-top: 2.5px;
   color: rgb(230, 230, 230);
@@ -312,7 +312,7 @@ video {
 .message-body {
   font-family: myFontBody;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .message-open {
@@ -364,4 +364,71 @@ svg {
 .btn span {
   color: white;
   font-size: 1rem;
+}
+
+/* FORM PAGE styles */
+.post-new-title {
+  font-size: 1.25rem;
+  font-family: myFontUser;
+  padding-top: 3rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+form input {
+  font-size: 1.25rem;
+  background-color: transparent;
+}
+
+form input,
+form textarea {
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+  padding-left: 5px;
+  padding-top: 2.5px;
+  color: white;
+  width: 100%;
+}
+
+form input:focus,
+form textarea:focus {
+  background-color: rgb(255, 255, 255, 0.05);
+}
+
+textarea {
+  font-family: myFontBody;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  bottom: 5px;
+  left: auto;
+  color: white;
+  width: 320px;
+  font-family: myFontBody;
+  font-size: 1rem;
+}
+
+.footer > svg {
+  width: 20px;
+}
+
+.footer span {
+  position: relative;
+  bottom: 12.5px;
 }
