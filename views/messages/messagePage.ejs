@@ -7,7 +7,7 @@
     <title>Mini Message Board</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container message-page">
       <%- include("../components/title", { title: "Singularity" }) %>
       <video autoPlay loop muted playsInline>
         <source src="../black-hole.mp4" type="video/mp4" />
@@ -23,8 +23,8 @@
           <p class="message-body"><%= message.text %></p>
           <p class="message-body"><%= new Date(message.added) %></p>
         </div>
-        <%- include("../components/back-button") %>
       </div>
+      <%- include("../components/back-button") %> 
       <%- include("../components/footer") %>
     </div>
   </body>

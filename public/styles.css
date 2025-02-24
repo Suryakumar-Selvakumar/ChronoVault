@@ -153,6 +153,7 @@ a {
     #bababa 5%,
     rgb(136, 42, 191) 5%
   );
+  text-shadow: -3px -3px 0px #f005f8, 3px 3px 0px #f005f8;
   clip-path: var(--slice-0);
 }
 
@@ -410,7 +411,7 @@ textarea {
   display: flex;
   align-items: baseline;
   justify-content: space-around;
-  bottom: 5px;
+  bottom: 10px;
   left: auto;
   color: white;
   width: 320px;
@@ -440,7 +441,7 @@ textarea {
   font-family: myFontBody;
   width: 200px;
   font-size: 1rem;
-  margin-top: 10rem;
+  margin-top: 7.5rem;
   background-color: transparent;
 }
 .btn-background-slide:hover {
@@ -471,4 +472,195 @@ textarea {
 .message.page .message-body:last-child {
   font-family: myFontDate;
   font-size: 1.75rem;
+}
+
+/* MOBILE STYLES */
+@media (min-width: 360px) and (max-width: 640px) {
+  /* INDEX PAGE */
+  .container {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    gap: 0.25rem;
+    padding: 3rem 0;
+    overflow: hidden;
+  }
+
+  #title {
+    margin-bottom: 0.5rem;
+    font-size: 4rem;
+  }
+
+  #total-posts,
+  #last-post {
+    position: static;
+    font-size: 1rem;
+  }
+
+  #last-post {
+    margin-bottom: 1rem;
+  }
+
+  .container .message-date {
+    font-size: 1.375rem;
+  }
+
+  .message > .message-date {
+    font-size: 1.125rem;
+  }
+
+  .button-49 {
+    margin-top: 0.5rem;
+    margin-bottom: 7rem;
+  }
+
+  video {
+    margin: -250px 0px -282.5px;
+    min-width: 1000px;
+  }
+
+  .blur-background {
+    gap: 1.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .message-open {
+    justify-content: center;
+  }
+
+  .open-container {
+    width: 120px;
+    height: 50px;
+  }
+
+  .center {
+    width: 92.5px;
+    height: 20px;
+  }
+
+  .btn {
+    width: 92.5px;
+    height: 30px;
+  }
+
+  .btn span {
+    font-size: 0.9rem;
+    position: relative;
+    top: -1px;
+  }
+
+  svg {
+    left: 0;
+    top: 0px;
+    height: 30px;
+  }
+
+  /* FORM PAGE */
+
+  .form-page video {
+    margin: -250px 0px -289.825px;
+    min-width: 1000px;
+  }
+
+  form {
+    width: 100%;
+    gap: 1rem;
+    padding: 0rem;
+  }
+
+  .container.form-page {
+    padding: 3rem 0 0.25rem 0;
+    gap: 0.7125rem;
+  }
+
+  .form-page #title {
+    margin-bottom: 10rem;
+  }
+
+  form input {
+    font-size: 1rem;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    background-color: rgb(255, 255, 255, 0.05);
+  }
+
+  .btn-background-slide {
+    width: 200px;
+    font-size: 1rem;
+    margin-top: 0rem;
+    position: relative;
+    top: -4.125rem;
+  }
+
+  .footer {
+    position: static;
+    align-items: center;
+    width: 295px;
+  }
+
+  .footer > svg {
+    width: 20px;
+    position: static;
+  }
+
+  .footer span {
+    position: relative;
+    bottom: 0px;
+  }
+
+  /* MESSAGE PAGE */
+  .message-page #title {
+    margin-bottom: 10rem;
+  }
+
+  .message.page {
+    gap: 2.5rem;
+  }
+
+  .message-page video {
+    margin: -250px 0px -289.825px;
+  }
+
+  .container.message-page {
+    padding: 3rem 0 0.25rem 0;
+    justify-content: space-between;
+    gap: 0.7125rem;
+  }
+
+  .message-page .blur-background {
+    margin-bottom: 9.5rem;
+  }
+
+  .message.page .message-user {
+    font-size: 1.25rem;
+  }
+
+  .message.page .message-date {
+    font-size: 1.5rem;
+  }
+
+  .message.page .message-body {
+    font-size: 1.125rem;
+  }
+
+  .message.page .message-body:last-child {
+    font-family: myFontDate;
+    font-size: 1.25rem;
+  }
+
+  .message-page .btn-background-slide {
+    top: -3.25rem;
+  }
+
+  .message-page .footer {
+    margin-top: 2rem;
+  }
 }
