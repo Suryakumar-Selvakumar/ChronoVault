@@ -1,5 +1,5 @@
 // data
-const messages = require("../db/messages");
+const { messages } = require("../db/messages");
 
 const newController = (req, res) => {
   if (req.method === "GET") {

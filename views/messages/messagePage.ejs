@@ -3,18 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
     <title>Mini Message Board</title>
   </head>
   <body>
-    <h2>Message</h2>
-    <div class="message-page">
-      <div class="message-header">
-        <span><%= message.user %></span>
-        <span>Posted: <%= message.added %></span>
+    <div class="container">
+      <%- include("../components/title", { title: "Singularity" }) %>
+      <video autoPlay loop muted playsInline>
+        <source src="../black-hole.mp4" type="video/mp4" />
+      </video>
+      <div class="blur-background">
+        <div class="message page">
+          <div class="message-header">
+            <span class="message-user"><%= message.user %></span>
+            <span class="message-date">
+              <%= getFormattedDate(message.added) %>
+            </span>
+          </div>
+          <p class="message-body"><%= message.text %></p>
+          <p class="message-body"><%= new Date(message.added) %></p>
+        </div>
+        <%- include("../components/back-button") %>
       </div>
-      <p id="message-body"><%= message.text %></p>
-      <p>Exact time: <%= new Date(message.added) %></p>
+      <%- include("../components/footer") %>
     </div>
-    <a href="/">Back to home</a>
   </body>
 </html>

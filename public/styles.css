@@ -93,7 +93,7 @@ body {
 
 #title {
   margin-bottom: 1rem;
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   background: linear-gradient(
     0deg,
     rgba(178, 142, 255, 0.3) 30%,
@@ -139,7 +139,7 @@ a {
   --slice-5: inset(80% -6px 5% 0);
   --slice-6: inset(30% -6px 70% 0);
 
-  content: "Suryakumar";
+  content: "Singularity awaits";
   display: block;
   position: absolute;
   top: -5px;
@@ -276,12 +276,6 @@ video {
   align-items: center;
 }
 
-#message-body {
-  display: flex;
-  justify-content: center;
-  padding-top: 1rem;
-}
-
 @font-face {
   font-family: myFontUser;
   src: url("./Xirod.otf");
@@ -367,9 +361,9 @@ svg {
 }
 
 /* FORM PAGE styles */
-.post-new-title {
-  font-size: 1.25rem;
-  font-family: myFontUser;
+.page-title {
+  font-size: 4rem;
+  font-family: myFontTitle;
   padding-top: 3rem;
   -webkit-user-select: none;
   user-select: none;
@@ -430,7 +424,7 @@ textarea {
 
 .footer span {
   position: relative;
-  bottom: 12.5px;
+  bottom: 11.5px;
 }
 
 .btn-background-slide {
@@ -444,7 +438,7 @@ textarea {
   cursor: pointer;
   box-shadow: rgb(255, 255, 255) 0px 0px 0px;
   font-family: myFontBody;
-  width: 300px;
+  width: 200px;
   font-size: 1rem;
   margin-top: 10rem;
   background-color: transparent;
@@ -455,4 +449,26 @@ textarea {
 .btn-background-slide:hover .btn-background-slide-bg {
   opacity: 1;
   transform: translateZ(0px);
+}
+
+/* MESSAGE PAGE STYLES */
+.message.page {
+  gap: 5rem;
+}
+
+.message.page .message-user {
+  font-size: 1.75rem;
+}
+
+.message.page .message-date {
+  font-size: 2rem;
+}
+
+.message.page .message-body {
+  font-size: 1.5rem;
+}
+
+.message.page .message-body:last-child {
+  font-family: myFontDate;
+  font-size: 1.75rem;
 }

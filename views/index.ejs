@@ -8,13 +8,11 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="title">ChronoVault</h1>
+      <%- include("components/title", { title: "ChronoVault" }) %>
       <a href="/new">
         <button class="button-49">Cast new message</button>
       </a>
-      <video autoPlay loop muted playsInline>
-        <source src="black-hole.mp4" type="video/mp4" />
-      </video>
+      <%- include("components/video") %>
       <div class="blur-background">
         <% messages.forEach((message, index) => {%> <%-
         include("messages/message", {message: message, index: index+1,

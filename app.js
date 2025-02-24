@@ -6,7 +6,7 @@ const app = express();
 const { getFormattedDate } = require("./utils/getFormattedDate");
 
 // data
-const messages = require("./db/messages");
+const { messages } = require("./db/messages");
 
 // Routers
 const newRouter = require("./routes/newRouter");

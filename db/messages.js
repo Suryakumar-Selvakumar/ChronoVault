@@ -11,4 +11,8 @@ const messages = [
   },
 ];
 
-module.exports = messages;
+const getMessageById = (messageId) => {
+  return messages[messageId - 1];
+};
+
+module.exports = { messages, getMessageById };
