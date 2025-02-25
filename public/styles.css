@@ -475,7 +475,7 @@ textarea {
 }
 
 /* MOBILE STYLES */
-@media (min-width: 360px) and (max-width: 640px) {
+@media (min-width: 360px) and (max-width: 1024px) {
   /* INDEX PAGE */
   .container {
     width: 100%;
@@ -557,7 +557,6 @@ textarea {
   }
 
   /* FORM PAGE */
-
   .form-page video {
     margin: -250px 0px -289.825px;
     min-width: 1000px;
@@ -572,6 +571,7 @@ textarea {
   .container.form-page {
     padding: 3rem 0 0.25rem 0;
     gap: 0.7125rem;
+    justify-content: space-between;
   }
 
   .form-page #title {
@@ -597,7 +597,7 @@ textarea {
     font-size: 1rem;
     margin-top: 0rem;
     position: relative;
-    top: -4.125rem;
+    top: -4rem;
   }
 
   .footer {
@@ -662,5 +662,17 @@ textarea {
 
   .message-page .footer {
     margin-top: 2rem;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1180px) {
+  video {
+    margin: -150px 0px -270px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  video {
+    margin: -150px 0px -335px;
   }
 }
