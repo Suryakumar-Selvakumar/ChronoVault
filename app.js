@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("node:path");
 const app = express();
+const port = process.env.PORT || 3000;
 
 // utils
 const { getFormattedDate } = require("./utils/getFormattedDate");
@@ -33,7 +34,6 @@ app.get("/", (req, res) => {
 app.use("/new", newRouter);
 app.use("/messages", messagesRouter);
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
