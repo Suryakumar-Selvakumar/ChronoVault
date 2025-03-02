@@ -1,8 +1,11 @@
 const { Router } = require("express");
 const newRouter = new Router();
-const { newController } = require("../controllers/newController");
+const {
+  newControllerGet,
+  newControllerPost,
+} = require("../controllers/newController");
 
-newRouter.get("/", newController);
-newRouter.post("/", newController);
+newRouter.get("/", newControllerGet);
+newRouter.post("/", newControllerPost);
 
 module.exports = newRouter;

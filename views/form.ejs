@@ -16,23 +16,37 @@
       include("components/video") %>
       <div class="blur-background">
         <form method="POST" action="/new">
-          <input
-            type="text"
-            name="user"
-            placeholder="Name"
-            class="message-user"
-            required
-          />
-          <textarea
-            type="text"
-            name="text"
-            placeholder="Message"
-            maxlength="1000"
-            spellcheck="false"
-            id="message-text"
-            rows="7"
-            required
-          ></textarea>
+          <div class="inputs">
+            <input type="text" name="user" value="<%= errors ? user : ""%>"
+            placeholder="Name" class="message-user" required /> 
+            <% if(errors) { %> 
+              <% errors.forEach(error => {if(error.msg === "User name must be less than 15 letters.") { %>
+                <span class="error">
+                  <img src="error.svg" alt="an error icon" />
+                  <%= error.msg %>
+                </span>
+              <% }}); %> 
+            <% } %>
+          </div>
+          <div class="inputs">
+            <textarea
+              type="text"
+              name="text"
+              placeholder="Message"
+              spellcheck="false"
+              id="message-text"
+              rows="7"
+              required
+            >
+<%= errors ? text : "" %></textarea
+            >
+            <% if(errors) {%> <% errors.forEach(error => {if(error.msg ===
+            "Message must be less than 500 characters.") { %>
+            <span class="error"
+              ><img src="error.svg" alt="an error icon" /><%= error.msg %></span
+            >
+            <% }}); %> <% } %>
+          </div>
           <button type="submit" class="button-49">Cast your message</button>
         </form>
         <%- include("components/back-button") %>

@@ -374,9 +374,16 @@ form {
   display: flex;
   flex-direction: column;
   width: 50%;
-  gap: 1rem;
+  gap: 1.75rem;
   align-items: center;
   padding: 1rem;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 form input {
@@ -404,6 +411,27 @@ textarea {
   font-family: myFontBody;
   margin-bottom: 1rem;
   font-size: 1rem;
+  resize: none;
+}
+
+.error {
+  font-family: myFontBody;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 5.25rem;
+  display: flex;
+  align-items: start;
+  gap: 0.25rem;
+}
+
+.error > img {
+  width: 15px;
+  position: relative;
+  top: 0.5px;
+}
+
+textarea + .error {
+  top: 17.85rem;
 }
 
 .footer {
@@ -501,12 +529,20 @@ textarea {
     margin-bottom: 1rem;
   }
 
-  .container .message-date {
+  .container .message-date:first-of-type {
     font-size: 1.375rem;
   }
 
-  .message > .message-date {
-    font-size: 1.125rem;
+  .message-header > .message-date {
+    font-size: 1rem;
+  }
+
+  .message-header > .message-user {
+    font-size: 0.85rem;
+  }
+
+  .message-body {
+    font-size: 0.8rem;
   }
 
   .button-49 {
@@ -530,30 +566,30 @@ textarea {
   }
 
   .open-container {
-    width: 120px;
-    height: 50px;
+    width: 108px;
+    height: 40px;
   }
 
   .center {
-    width: 92.5px;
+    width: 83.25px;
     height: 20px;
   }
 
   .btn {
-    width: 92.5px;
-    height: 30px;
+    width: 83.25px;
+    height: 28px;
   }
 
   .btn span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     position: relative;
     top: -1px;
   }
 
   svg {
     left: 0;
-    top: 0px;
-    height: 30px;
+    top: -1px;
+    height: 29px;
   }
 
   /* FORM PAGE */
@@ -639,21 +675,25 @@ textarea {
     margin-bottom: 9.5rem;
   }
 
+  .message.page .message-header {
+    flex-direction: column;
+  }
+
   .message.page .message-user {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .message.page .message-date {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
   }
 
   .message.page .message-body {
-    font-size: 1.125rem;
+    font-size: 1.05rem;
   }
 
   .message.page .message-body:last-child {
     font-family: myFontDate;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .message-page .btn-background-slide {
