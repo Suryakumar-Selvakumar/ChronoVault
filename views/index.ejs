@@ -27,9 +27,8 @@
       </a>
       <%- include("components/video") %>
       <div class="blur-background">
-        <% messages.forEach((message, index) => {%> <%-
-        include("messages/message", {message: message, index: index+1,
-        getFormattedDate: getFormattedDate}) %> <% }); %>
+        <% messages.forEach((message) => {%> <%- include("messages/message",
+        {message: message, getFormattedDate: getFormattedDate}) %> <% }); %>
       </div>
     </div>
   </body>

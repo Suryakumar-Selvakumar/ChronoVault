@@ -1,6 +1,10 @@
 // data
-const { messages } = require("../db/messages");
+// const { messages } = require("../db/messages");
+const db = require("../db/queries");
+
 const { body, validationResult } = require("express-validator");
+
+const asyncHandler = require("express-async-handler");
 
 const newControllerGet = (req, res) => {
   res.render("form", { errors: false });
@@ -21,7 +25,7 @@ const validateMessage = [
 
 const newControllerPost = [
   validateMessage,
-  (req, res) => {
+  asyncHandler(async (req, res) => {
     const { user, text } = req.body;
     const errors = validationResult(req);
 
@@ -31,10 +35,15 @@ const newControllerPost = [
         .render("form", { user: user, text: text, errors: errors.array() });
     }
 
-    messages.push({ text: text, user: user, added: new Date() });
+    // messages.push({ text: text, user: user, added: new Date() });
+    await db.insertMessage({
+      text: text,
+      user: user,
+      added: new Date().toISOString(),
+    });
 
     res.redirect("/");
-  },
+  }),
 ];
 
 module.exports = { newControllerGet, newControllerPost };
