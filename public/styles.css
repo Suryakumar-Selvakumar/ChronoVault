@@ -112,6 +112,13 @@ a {
   color: white;
 }
 
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
 .button-49,
 .button-49:after {
   width: 300px;
@@ -123,8 +130,9 @@ a {
   color: #fff;
   outline: transparent;
   position: relative;
-  user-select: none;
+  left: 1rem;
   -webkit-user-select: none;
+  user-select: none;
   touch-action: manipulation;
   font-family: myFontUser;
   cursor: pointer;
@@ -210,6 +218,129 @@ a {
   100% {
     clip-path: var(--slice-1);
     transform: translate(0);
+  }
+}
+
+/* Flagged messages button */
+.link {
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  top: 1.5px;
+}
+.link::before,
+.link::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: rgb(136, 42, 191);
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+.link::before {
+  content: "";
+}
+.link--helike {
+  font-family: myFontUser;
+}
+.link--helike:hover span {
+  animation: glitchText 0.5s linear;
+}
+.link--helike::before {
+  height: 2px;
+  opacity: 0;
+}
+.link--helike:hover::before {
+  opacity: 1;
+  animation: glitchLine 0.5s steps(2, start) forwards;
+}
+
+@keyframes glitchText {
+  0% {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0) scale3d(-1, -1, 1);
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+  }
+  10% {
+    -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  20% {
+    -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+  35% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+  60% {
+    -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  70% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+  80% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+  90% {
+    transform: translate3d(-10px, 0, 0) scale3d(-1, -1, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes glitchLine {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  10% {
+    transform: translate3d(10px, 0, 0);
+  }
+  20% {
+    transform: translate3d(0, 4px, 0);
+  }
+  30% {
+    transform: scale3d(0.1, 1.4, 1) translate3d(0, -25px, 0);
+    transform-origin: 100% 0%;
+  }
+  40% {
+    transform: scale3d(1, 0.3, 1) translate3d(0, 25px, 0);
+  }
+  50% {
+    transform: scale3d(0.5, 0.3, 1) translate3d(-100px, -80px, 0);
+  }
+  60% {
+    transform: scale3d(1, 1.25, 1) translate3d(10px, -5px, 0);
+  }
+  70% {
+    transform: scale3d(0.5, 0.5, 1) translate3d(0, 20px, 0);
+  }
+  80% {
+    transform: translate3d(-30, 10px, 0) scale3d(1, 0.4, 1);
+    transform-origin: 100% 0%;
+  }
+  90% {
+    transform: scale3d(1, 0.5, 1) translate3d(0, -15px, 0);
+    transform-origin: 0% 50%;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -344,13 +475,13 @@ video {
 svg {
   position: absolute;
   left: 0;
-  top: -0.5px;
+  top: 0;
   fill: none;
   stroke: #ffffff;
   stroke-dasharray: 150 480;
   stroke-dashoffset: 150;
   transition: 1s ease-in-out;
-  height: 41px;
+  height: 40px;
 }
 
 .btn:hover svg {
@@ -364,7 +495,7 @@ svg {
 
 /* FLAG BUTTON STYLES */
 .btn-slice {
-  padding: 0.2rem 2rem;
+  padding: 0.15rem 2rem;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0rem;
@@ -514,11 +645,12 @@ textarea + .error {
 
 .footer > svg {
   width: 20px;
+  top: -8px;
 }
 
 .footer span {
   position: relative;
-  bottom: 11.5px;
+  bottom: 0px;
 }
 
 .btn-background-slide {
@@ -575,13 +707,20 @@ textarea + .error {
     height: 100%;
     font-size: 1rem;
     gap: 0.25rem;
-    padding: 3rem 0;
+    padding: 2rem 0;
     overflow: hidden;
   }
 
   #title {
-    margin-bottom: 0.5rem;
+    margin-bottom: -1rem;
     font-size: 4rem;
+  }
+
+  .main-buttons {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 0.25rem;
   }
 
   #total-posts,
@@ -613,6 +752,7 @@ textarea + .error {
   .button-49 {
     margin-top: 0.5rem;
     margin-bottom: 7rem;
+    left: 0;
   }
 
   video {

@@ -22,9 +22,14 @@
           ><%= messages[messages.length-1].user %></span
         >
       </p>
-      <a href="/new">
-        <button class="button-49">Cast new message</button>
-      </a>
+      <div class="main-buttons">
+        <a href="/all" class="link link--helike"
+          ><span>View all Messages</span></a
+        >
+        <a href="/new">
+          <button class="button-49">Cast new message</button>
+        </a>
+      </div>
       <%- include("components/video") %>
       <div class="blur-background">
         <% messages.forEach((message) => {%> <%- include("messages/message",
