@@ -2,7 +2,6 @@
 const asyncHandler = require("express-async-handler");
 
 // data
-// const { messages, getMessageById } = require("../db/messages");
 const db = require("../db/queries");
 
 // helpers

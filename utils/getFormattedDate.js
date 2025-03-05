@@ -3,7 +3,7 @@ const { differenceInHours, format } = require("date-fns");
 const getFormattedDate = (date) => {
   date = new Date(date);
   const currentDate = new Date();
-  const hoursDif = differenceInHours(date, currentDate);
+  const hoursDif = differenceInHours(currentDate, date);
 
   const formattedDate = format(date, "MM-dd-yyyy");
 

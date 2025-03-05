@@ -17,7 +17,6 @@ const port = process.env.PORT || 3000;
 const { getFormattedDate } = require("./utils/getFormattedDate");
 
 // data
-// const { messages } = require("./db/messages");
 const db = require("./db/queries");
 
 // Routers

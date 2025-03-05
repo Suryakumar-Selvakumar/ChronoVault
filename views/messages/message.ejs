@@ -5,6 +5,10 @@
   </div>
   <p class="message-body"><%= message.text %></p>
   <div class="message-open">
+    <a class="btn-slice" href="/messages/<%= message.id %>/flag">
+      <div class="top"><span>Flag</span></div>
+      <div class="bottom"><span>Flag</span></div>
+    </a>
     <a href="/messages/<%= message.id %>">
       <div class="open-container">
         <div class="center">
