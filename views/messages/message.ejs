@@ -5,10 +5,24 @@
   </div>
   <p class="message-body"><%= message.text %></p>
   <div class="message-open">
-    <a class="btn-slice" href="/messages/<%= message.id %>/flag">
+    <script>
+      function confirmFlag(messageId) {
+        const answer = window.confirm(
+          "Are your sure you want to flag this message as inappropriate?"
+        );
+        if (answer) {
+          window.location.href = `/messages/flag/${messageId}`;
+        }
+      }
+    </script>
+    <% if(message.flagged) { %>
+    <img src="../flag.svg" alt="a flag icon" id="flag-icon" />
+    <% } else { %>
+    <div class="btn-slice" onclick="confirmFlag('<%= message.id %>')">
       <div class="top"><span>Flag</span></div>
       <div class="bottom"><span>Flag</span></div>
-    </a>
+    </div>
+    <% } %>
     <a href="/messages/<%= message.id %>">
       <div class="open-container">
         <div class="center">

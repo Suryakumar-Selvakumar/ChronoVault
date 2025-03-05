@@ -2,7 +2,7 @@ const pool = require("./pool");
 
 async function getMessages() {
   const { rows } = await pool.query(
-    "SELECT * FROM messages WHERE flagged = FALSE"
+    "SELECT * FROM messages WHERE flagged = FALSE ORDER BY added DESC"
   );
   return rows;
 }
@@ -21,8 +21,21 @@ async function getMessageById(messageId) {
   return rows[0];
 }
 
+async function flagMessageById(messageId) {
+  await pool.query("UPDATE messages SET flagged = TRUE WHERE id = $1", [
+    messageId,
+  ]);
+}
+
+async function getAllMessages() {
+  const { rows } = await pool.query("SELECT * FROM messages ORDER BY added DESC");
+  return rows;
+}
+
 module.exports = {
   getMessages,
   insertMessage,
   getMessageById,
+  flagMessageById,
+  getAllMessages,
 };

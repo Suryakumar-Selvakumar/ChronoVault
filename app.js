@@ -15,6 +15,7 @@ const port = process.env.PORT || 3000;
 
 // utils
 const { getFormattedDate } = require("./utils/getFormattedDate");
+const { flagMessage } = require("./controllers/messagesController");
 
 // data
 const db = require("./db/queries");
@@ -32,6 +33,18 @@ app.get(
     const messages = await db.getMessages();
 
     res.render("index", {
+      messages: messages,
+      getFormattedDate: getFormattedDate,
+    });
+  })
+);
+
+app.get(
+  "/all",
+  asyncHandler(async (req, res) => {
+    const messages = await db.getAllMessages();
+
+    res.render("indexAll", {
       messages: messages,
       getFormattedDate: getFormattedDate,
     });

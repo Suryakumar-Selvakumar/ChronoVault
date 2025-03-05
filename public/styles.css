@@ -448,6 +448,11 @@ video {
   font-family: myFontBody;
 }
 
+#flag-icon {
+  width: 25px;
+  align-self: flex-end;
+}
+
 .open-container {
   width: 120px;
   height: 50px;
@@ -505,6 +510,7 @@ svg {
   transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
   transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
   align-self: flex-end;
+  cursor: pointer;
 }
 .btn-slice .top {
   position: relative;
@@ -716,17 +722,10 @@ textarea + .error {
     font-size: 4rem;
   }
 
-  .main-buttons {
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
   #total-posts,
   #last-post {
     position: static;
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   #last-post {
@@ -749,14 +748,43 @@ textarea + .error {
     font-size: 0.8rem;
   }
 
-  .button-49 {
+  .main-buttons {
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    max-height: min-content;
+  }
+
+  .link {
+    font-size: 0.65rem;
+    padding: 0 6px;
+  }
+
+  .button-49-link {
+    max-height: 50px;
+  }
+
+  .button-49-link > .button-49 {
     margin-top: 0.5rem;
     margin-bottom: 7rem;
     left: 0;
+    font-size: 0.65rem;
+    width: 172.5px;
+    height: 30px;
+    line-height: 30px;
+    top: 1.75px;
+  }
+
+  .button-49-link > .button-49:after {
+    font-size: 0.65rem;
+    width: 172.5px;
+    height: 30px;
+    line-height: 30px;
+    text-shadow: -1.5px -1.5px 0px #f005f8, 3px 3px 0px #f005f8;
   }
 
   video {
-    margin: -250px 0px -282.5px;
+    margin: -150px 0px -282.5px;
     min-width: 1000px;
   }
 
@@ -825,16 +853,21 @@ textarea + .error {
   .btn-slice:before {
     content: "";
     height: 1px;
-    width: 50px;
+    width: 40px;
     background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     margin-top: 10px;
-    right: -30px;
+    right: -25px;
     transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
     transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
   }
   .btn-slice:hover:before {
     width: 130%;
+  }
+
+  #flag-icon {
+    width: 20px;
+    align-self: flex-end;
   }
 
   /* FORM PAGE */
@@ -870,6 +903,13 @@ textarea + .error {
     padding: 3rem 0 0.25rem 0;
     gap: 0.7125rem;
     justify-content: space-between;
+  }
+
+  form > .button-49 {
+    margin-top: 0rem;
+    margin-bottom: 7rem;
+    left: 0;
+    font-size: 0.85rem;
   }
 
   .form-page #title {

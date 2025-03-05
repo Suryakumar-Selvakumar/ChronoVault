@@ -7,7 +7,7 @@ const db = require("../db/queries");
 // helpers
 const { getFormattedDate } = require("../utils/getFormattedDate");
 
-const messagesController = asyncHandler(async (req, res) => {
+const getMessage = asyncHandler(async (req, res) => {
   const { messageId } = req.params;
 
   const message = await db.getMessageById(messageId);
@@ -18,4 +18,10 @@ const messagesController = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports = { messagesController };
+const flagMessage = asyncHandler(async (req, res) => {
+  const { messageId } = req.params;
+  await db.flagMessageById(messageId);
+  res.redirect("/");
+});
+
+module.exports = { getMessage, flagMessage };

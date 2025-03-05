@@ -8,7 +8,7 @@ const getFormattedDate = (date) => {
 
   const formattedDate = format(date, "MM-dd-yyyy");
 
-  if (hoursDif <= 23) {
+  if (hoursDif <= 24) {
     return hoursDif < 1
       ? `${minutesDif} minutes ago`
       : hoursDif == 1
