@@ -343,6 +343,10 @@ a {
   }
 }
 
+.view {
+  width: 265px;
+}
+
 #total-posts {
   font-family: myFontBody;
   font-size: 1.25rem;
