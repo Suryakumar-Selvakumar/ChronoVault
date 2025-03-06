@@ -88,7 +88,7 @@ body {
   color: rgb(255, 255, 255);
   font-size: 1.25rem;
   gap: 1rem;
-  padding: 3rem 0;
+  padding: 3rem 0 1rem 0;
 }
 
 #title {
@@ -763,7 +763,6 @@ textarea + .error {
 
   .view {
     grid-area: view;
-
   }
 
   .filter {
@@ -987,7 +986,7 @@ textarea + .error {
   }
 
   .message-page .blur-background {
-    margin-bottom: 9.5rem;
+    margin-bottom: 9.2rem;
   }
 
   .message.page .message-header {
@@ -1021,21 +1020,30 @@ textarea + .error {
 }
 
 @media (min-width: 820px) and (max-width: 1180px) and (any-pointer: coarse) {
-  .form-page video {
-    margin: -250px 0px -289.825px;
+  video {
+    margin: -150px 0px -290px;
+  }
+
+  .form-page video,
+  .message-page video {
+    margin: -250px 0px -297.5px;
   }
 }
 
-@media (min-width: 820px) and (max-width: 1180px) and (any-pointer: coarse) {
+@media (min-width: 1180px) and (max-width: 1366px) and (any-pointer: coarse) {
+  video {
+    margin: -150px 0px -360px;
+  }
+
   .form-page video,
   .message-page video {
-    margin: -250px 0px -296px;
+    margin: -250px 0px -367.5px;
   }
 }
 
 @media (min-width: 360px) and (max-width: 1440px) and (any-pointer: fine) {
   video {
-    margin: -250px 0px -368.5px;
+    margin: -150px 0px -368.5px;
   }
 
   .form-page video,

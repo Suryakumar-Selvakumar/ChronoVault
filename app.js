@@ -15,7 +15,6 @@ const port = process.env.PORT || 3000;
 
 // utils
 const { getFormattedDate } = require("./utils/getFormattedDate");
-const { flagMessage } = require("./controllers/messagesController");
 
 // data
 const db = require("./db/queries");
@@ -52,8 +51,6 @@ app.get(
   "/all",
   asyncHandler(async (req, res) => {
     const { filter } = req.query;
-
-    console.log(filter);
 
     if (filter) {
       const messages = await db.filterMessages(filter, true);

@@ -12,7 +12,7 @@ const CREATE_SQL = `
 `;
 
 const INSERT_SQL = `
-    INSERT INTO messages (text, "user", added) 
+    INSERT INTO messages (text, username, added) 
     VALUES
         ($1, $2, $3),
         ($4, $5, $6);
@@ -30,8 +30,8 @@ const values = [
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    // connectionString: `postgresql://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}/${process.env.DATABASE_NAME}`,
     connectionString: argv[2],
+    ssl: { rejectUnauthorized: false },
   });
 
   await client.connect();
