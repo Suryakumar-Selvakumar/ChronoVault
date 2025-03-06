@@ -767,6 +767,7 @@ textarea + .error {
 
   .view {
     grid-area: view;
+    width: 185px;
   }
 
   .filter {
