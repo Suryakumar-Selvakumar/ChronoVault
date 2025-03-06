@@ -17,7 +17,7 @@
       <div class="blur-background">
         <form method="POST" action="/new">
           <div class="inputs">
-            <input type="text" name="user" value="<%= errors ? user : ""%>"
+            <input type="text" name="username" value="<%= errors ? user : ""%>"
             placeholder="Name" class="message-user" required /> 
             <% if(errors) { %> 
               <% errors.forEach(error => {if(error.msg === "User name must be less than 15 letters.") { %>

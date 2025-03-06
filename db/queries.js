@@ -7,10 +7,10 @@ async function getMessages() {
   return rows;
 }
 
-async function insertMessage({ text, user, added }) {
+async function insertMessage({ text, username, added }) {
   await pool.query(
-    'INSERT INTO messages (text, "user", added) VALUES ($1, $2, $3);',
-    [text, user, added]
+    "INSERT INTO messages (text, username, added) VALUES ($1, $2, $3);",
+    [text, username, added]
   );
 }
 
@@ -28,8 +28,28 @@ async function flagMessageById(messageId) {
 }
 
 async function getAllMessages() {
-  const { rows } = await pool.query("SELECT * FROM messages ORDER BY added DESC");
+  const { rows } = await pool.query(
+    "SELECT * FROM messages ORDER BY added DESC"
+  );
   return rows;
+}
+
+async function filterMessages(keyword, flagged) {
+  if (flagged) {
+    // Get all messages included flagged
+    const { rows } = await pool.query(
+      "SELECT * FROM messages WHERE username LIKE '%' || $1 || '%'",
+      [keyword]
+    );
+    return rows;
+  } else {
+    // Get only safe messages that are not flagged
+    const { rows } = await pool.query(
+      "SELECT * FROM messages WHERE username LIKE '%' || $1 || '%' AND flagged = FALSE",
+      [keyword]
+    );
+    return rows;
+  }
 }
 
 module.exports = {
@@ -38,4 +58,5 @@ module.exports = {
   getMessageById,
   flagMessageById,
   getAllMessages,
+  filterMessages,
 };

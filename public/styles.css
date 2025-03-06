@@ -116,7 +116,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .button-49,
@@ -130,7 +130,6 @@ a {
   color: #fff;
   outline: transparent;
   position: relative;
-  left: 1rem;
   -webkit-user-select: none;
   user-select: none;
   touch-action: manipulation;
@@ -713,7 +712,7 @@ textarea + .error {
     height: 100%;
     font-size: 1rem;
     gap: 0.25rem;
-    padding: 2rem 0;
+    padding: 2rem 0 2rem 0;
     overflow: hidden;
   }
 
@@ -733,7 +732,7 @@ textarea + .error {
   }
 
   .container .message-date:first-of-type {
-    font-size: 1.375rem;
+    font-size: 1.15rem;
   }
 
   .message-header > .message-date {
@@ -749,8 +748,10 @@ textarea + .error {
   }
 
   .main-buttons {
-    align-items: center;
-    justify-content: start;
+    display: grid;
+    grid-template-areas:
+      "view filter"
+      "cast cast";
     gap: 1rem;
     max-height: min-content;
   }
@@ -760,12 +761,24 @@ textarea + .error {
     padding: 0 6px;
   }
 
+  .view {
+    grid-area: view;
+
+  }
+
+  .filter {
+    grid-area: filter;
+  }
+
   .button-49-link {
     max-height: 50px;
+    grid-area: cast;
+    display: flex;
+    justify-content: center;
   }
 
   .button-49-link > .button-49 {
-    margin-top: 0.5rem;
+    margin-top: 0;
     margin-bottom: 7rem;
     left: 0;
     font-size: 0.65rem;
@@ -900,7 +913,7 @@ textarea + .error {
   }
 
   .container.form-page {
-    padding: 3rem 0 0.25rem 0;
+    padding: 2rem 0 0rem 0;
     gap: 0.7125rem;
     justify-content: space-between;
   }
@@ -913,7 +926,7 @@ textarea + .error {
   }
 
   .form-page #title {
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
 
   form input {
@@ -956,7 +969,7 @@ textarea + .error {
 
   /* MESSAGE PAGE */
   .message-page #title {
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
 
   .message.page {
@@ -968,7 +981,7 @@ textarea + .error {
   }
 
   .container.message-page {
-    padding: 3rem 0 0.25rem 0;
+    padding: 2rem 0 0.25rem 0;
     justify-content: space-between;
     gap: 0.7125rem;
   }

@@ -11,7 +11,7 @@ const newControllerGet = (req, res) => {
 };
 
 const validateMessage = [
-  body("user")
+  body("username")
     .trim()
     .isAlpha()
     .withMessage("User name must only contain letters.")
@@ -26,19 +26,20 @@ const validateMessage = [
 const newControllerPost = [
   validateMessage,
   asyncHandler(async (req, res) => {
-    const { user, text } = req.body;
+    const { username, text } = req.body;
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res
-        .status(400)
-        .render("form", { user: user, text: text, errors: errors.array() });
+      return res.status(400).render("form", {
+        username: username,
+        text: text,
+        errors: errors.array(),
+      });
     }
 
-    // messages.push({ text: text, user: user, added: new Date() });
     await db.insertMessage({
       text: text,
-      user: user,
+      username: username,
       added: new Date().toISOString(),
     });
 

@@ -18,17 +18,18 @@
       </p>
       <p id="last-post">
         Last post by:
-        <span class="message-user"
-          ><%= messages[0].user %></span
-        >
+        <span class="message-user"><%= messages[0].username %></span>
       </p>
       <div class="main-buttons">
-        <a href="/all" class="link link--helike">
+        <a href="/all" class="link link--helike view">
           <span>View all Messages</span>
         </a>
         <a href="/new" class="button-49-link">
           <button class="button-49">Cast new message</button>
         </a>
+        <div class="link link--helike filter" onclick="confirmFilter()">
+          <span>Filter Messages</span>
+        </div>
       </div>
       <%- include("components/video") %>
       <div class="blur-background">
@@ -36,5 +37,13 @@
         {message: message, getFormattedDate: getFormattedDate}) %> <% }); %>
       </div>
     </div>
+    <script>
+      function confirmFilter() {
+        const filterKey = prompt("Enter filter keyword:", "");
+        if (filterKey) {
+          window.location.href = `/?filter=${filterKey}`;
+        }
+      }
+    </script>
   </body>
 </html>

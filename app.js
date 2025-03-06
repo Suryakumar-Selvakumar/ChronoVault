@@ -30,24 +30,44 @@ app.use(express.urlencoded({ extended: true }));
 app.get(
   "/",
   asyncHandler(async (req, res) => {
-    const messages = await db.getMessages();
+    const { filter } = req.query;
 
-    res.render("index", {
-      messages: messages,
-      getFormattedDate: getFormattedDate,
-    });
+    if (filter) {
+      const messages = await db.filterMessages(filter, false);
+      res.render("index", {
+        messages: messages,
+        getFormattedDate: getFormattedDate,
+      });
+    } else {
+      const messages = await db.getMessages();
+      res.render("index", {
+        messages: messages,
+        getFormattedDate: getFormattedDate,
+      });
+    }
   })
 );
 
 app.get(
   "/all",
   asyncHandler(async (req, res) => {
-    const messages = await db.getAllMessages();
+    const { filter } = req.query;
 
-    res.render("indexAll", {
-      messages: messages,
-      getFormattedDate: getFormattedDate,
-    });
+    console.log(filter);
+
+    if (filter) {
+      const messages = await db.filterMessages(filter, true);
+      res.render("indexAll", {
+        messages: messages,
+        getFormattedDate: getFormattedDate,
+      });
+    } else {
+      const messages = await db.getAllMessages();
+      res.render("indexAll", {
+        messages: messages,
+        getFormattedDate: getFormattedDate,
+      });
+    }
   })
 );
 

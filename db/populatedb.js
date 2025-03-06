@@ -1,11 +1,11 @@
 const { Client } = require("pg");
-require("dotenv").config();
+const { argv } = require("node:process");
 
 const CREATE_SQL = `
     CREATE TABLE IF NOT EXISTS messages (
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         text VARCHAR (500),
-        "user" VARCHAR (15),
+        username VARCHAR (15),
         added TIMESTAMPTZ DEFAULT now(),
         flagged BOOLEAN NOT NULL DEFAULT FALSE
     );
@@ -31,7 +31,7 @@ async function main() {
   console.log("seeding...");
   const client = new Client({
     // connectionString: `postgresql://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}/${process.env.DATABASE_NAME}`,
-    connectionString: process.env.LOCAL_DATABASE,
+    connectionString: argv[2],
   });
 
   await client.connect();

@@ -1,8 +1,8 @@
 const { Pool } = require("pg");
-require("dotenv").config();
+const { argv } = require("node:process");
 
 const pool = new Pool({
-  connectionString: process.env.LOCAL_DATABASE,
+  connectionString: argv[2],
 });
 
 module.exports = pool;
