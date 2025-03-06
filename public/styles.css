@@ -710,6 +710,10 @@ textarea + .error {
 
 /* MOBILE STYLES */
 @media (min-width: 360px) and (max-width: 1440px) {
+  body {
+    min-height: 100vh;
+  }
+
   /* INDEX PAGE */
   .container {
     width: 100%;
