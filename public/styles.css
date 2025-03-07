@@ -1046,7 +1046,7 @@ textarea + .error {
   }
 } */
 
-/* @media (min-width: 360px) and (max-width: 1440px) and (any-pointer: fine) {
+@media (min-width: 360px) and (max-width: 1440px) and (any-pointer: fine) {
   video {
     margin: -150px 0px -368.5px;
   }
@@ -1055,4 +1055,4 @@ textarea + .error {
   .message-page video {
     margin: -250px 0px -375.5px;
   }
-} */
+}
