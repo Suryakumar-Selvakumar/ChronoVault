@@ -801,7 +801,7 @@ textarea + .error {
   }
 
   video {
-    margin: -150px 0px -192.5px;
+    margin: -150px 0px -282.5px;
     min-width: 1000px;
   }
 
@@ -889,7 +889,7 @@ textarea + .error {
 
   /* FORM PAGE */
   .form-page video {
-    margin: -250px 0px -199.825px;
+    margin: -250px 0px -289.825px;
     min-width: 1000px;
   }
 
@@ -981,7 +981,7 @@ textarea + .error {
   }
 
   .message-page video {
-    margin: -250px 0px -199.825px;
+    margin: -250px 0px -289.825px;
   }
 
   .container.message-page {
@@ -1024,7 +1024,7 @@ textarea + .error {
   }
 }
 
-@media (min-width: 820px) and (max-width: 1180px) and (any-pointer: coarse) {
+/* @media (min-width: 820px) and (max-width: 1180px) and (any-pointer: coarse) {
   video {
     margin: -150px 0px -290px;
   }
@@ -1033,9 +1033,9 @@ textarea + .error {
   .message-page video {
     margin: -250px 0px -297.5px;
   }
-}
+} */
 
-@media (min-width: 1180px) and (max-width: 1366px) and (any-pointer: coarse) {
+/* @media (min-width: 1180px) and (max-width: 1366px) and (any-pointer: coarse) {
   video {
     margin: -150px 0px -360px;
   }
@@ -1044,9 +1044,9 @@ textarea + .error {
   .message-page video {
     margin: -250px 0px -367.5px;
   }
-}
+} */
 
-@media (min-width: 360px) and (max-width: 1440px) and (any-pointer: fine) {
+/* @media (min-width: 360px) and (max-width: 1440px) and (any-pointer: fine) {
   video {
     margin: -150px 0px -368.5px;
   }
@@ -1055,4 +1055,4 @@ textarea + .error {
   .message-page video {
     margin: -250px 0px -375.5px;
   }
-}
+} */
