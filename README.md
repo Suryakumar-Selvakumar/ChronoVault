@@ -4,7 +4,7 @@
    <img width=auto height=auto src="./public/output-mobile.jpg" alt="output collage">
 </div>
 
-<div align='center'>Cast your message into the Singularity where the space-time continuum ceases to exist! A black-hole themed message board to immortalize your words!</div>
+<div align='center'>Cast your message into the Singularity where the space-time continuum ceases to exist! A black hole themed message board to immortalize your words!</div>
 
 ## Domain
 
