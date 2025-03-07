@@ -710,10 +710,6 @@ textarea + .error {
 
 /* MOBILE STYLES */
 @media (min-width: 360px) and (max-width: 1440px) {
-  body {
-    min-height: 100dvh;
-  }
-
   /* INDEX PAGE */
   .container {
     width: 100%;
@@ -805,7 +801,7 @@ textarea + .error {
   }
 
   video {
-    margin: -150px 0px -282.5px;
+    margin: -150px 0px -192.5px;
     min-width: 1000px;
   }
 
@@ -893,7 +889,7 @@ textarea + .error {
 
   /* FORM PAGE */
   .form-page video {
-    margin: -250px 0px -289.825px;
+    margin: -250px 0px -199.825px;
     min-width: 1000px;
   }
 
@@ -985,7 +981,7 @@ textarea + .error {
   }
 
   .message-page video {
-    margin: -250px 0px -289.825px;
+    margin: -250px 0px -199.825px;
   }
 
   .container.message-page {
