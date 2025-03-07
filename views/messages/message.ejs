@@ -8,7 +8,7 @@
     <script>
       function confirmFlag(messageId) {
         const answer = window.confirm(
-          "Are your sure you want to flag this message as inappropriate?"
+          "Are you sure you want to flag this message as inappropriate?"
         );
         if (answer) {
           window.location.href = `/messages/flag/${messageId}`;

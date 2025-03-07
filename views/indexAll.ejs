@@ -14,11 +14,16 @@
     <div class="container">
       <%- include("components/title", { title: "ChronoVault" }) %>
       <p id="total-posts">
-        Total posts: <span class="message-date"><%= messages.length %></span>
+        Total posts:
+        <span class="message-date"
+          ><%= messages[0].username ? messages.length : 0 %></span
+        >
       </p>
       <p id="last-post">
         Last post by:
-        <span class="message-user"><%= messages[0].username %></span>
+        <span class="message-user"
+          ><%= messages[0].username ? messages[0].username : "" %></span
+        >
       </p>
       <div class="main-buttons">
         <a href="/" class="link link--helike view"
@@ -41,8 +46,11 @@
       </div>
       <%- include("components/video") %>
       <div class="blur-background">
-        <% messages.forEach((message) => {%> <%- include("messages/message",
-        {message: message, getFormattedDate: getFormattedDate}) %> <% }); %>
+        <% if(typeof messages[0] === "string") { %>
+        <div class="error-msg"><%= messages[0] %></div>
+        <% } else { %> <%messages.forEach((message) => {%> <%-
+        include("messages/message", {message: message, getFormattedDate:
+        getFormattedDate}) %> <% }); %> <% } %>
       </div>
     </div>
   </body>

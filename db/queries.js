@@ -41,14 +41,18 @@ async function filterMessages(keyword, flagged) {
       "SELECT * FROM messages WHERE username LIKE '%' || $1 || '%'",
       [keyword]
     );
-    return rows;
+    return rows.length > 0
+      ? rows
+      : [`No messages found for keyword "${keyword}"`];
   } else {
     // Get only safe messages that are not flagged
     const { rows } = await pool.query(
       "SELECT * FROM messages WHERE username LIKE '%' || $1 || '%' AND flagged = FALSE",
       [keyword]
     );
-    return rows;
+    return rows.length > 0
+      ? rows
+      : [`No messages found for keyword "${keyword}"`];
   }
 }
 
