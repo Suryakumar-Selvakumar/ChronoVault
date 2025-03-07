@@ -88,7 +88,7 @@ body {
   color: rgb(255, 255, 255);
   font-size: 1.25rem;
   gap: 1rem;
-  padding: 3rem 0 1rem 0;
+  padding: 3rem 0;
   height: 100vh;
 }
 
@@ -387,7 +387,6 @@ video {
   padding-top: 1.875rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  margin-bottom: 3rem;
 }
 
 .error-msg {
@@ -574,6 +573,10 @@ svg {
 }
 
 /* FORM PAGE STYLES */
+.container.form-page {
+  padding: 3rem 0 0 0;
+}
+
 .page-title {
   font-size: 4rem;
   font-family: myFontTitle;
@@ -693,6 +696,10 @@ textarea + .error {
 }
 
 /* MESSAGE PAGE STYLES */
+.container.message-page {
+  padding: 3rem 0 0 0;
+}
+
 .message.page {
   gap: 5rem;
 }
